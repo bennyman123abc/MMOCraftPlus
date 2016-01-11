@@ -15,15 +15,18 @@ public class Events implements Listener{
 		config = plugin;
 	}
 	
+	@SuppressWarnings("unused")
 	@EventHandler
 	public void playerKilled(EntityDeathEvent e){
 		Entity killer = e.getEntity();
+		
+		e.setDroppedExp(0);
 		
 		if(killer instanceof Player) {
 			Player player = ((Player) killer).getPlayer();
 			
 			int oldExp = config.getConfig().getInt(player + ".exp");
-			int playerLevel = config.getConfig().getInt(player + ".lvl");
+			int oldPlayerLevel = config.getConfig().getInt(player + ".lvl");
 			
 			
 		}
