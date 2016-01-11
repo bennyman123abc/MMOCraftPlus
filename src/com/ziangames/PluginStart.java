@@ -16,7 +16,7 @@ public class PluginStart extends JavaPlugin{
 //		Register New Commands Under This Comment Like:
 //		getCommand("CommandHere").setExecutor(Commander);
 		
-		getCommand("test").setExecutor(Commander);
+		getCommand("cname").setExecutor(Commander);
 		
 	}
 	

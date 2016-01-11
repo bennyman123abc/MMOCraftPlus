@@ -2,5 +2,5 @@ name: MMOCraftPlus
 main: com.ziangames.PluginStart
 version: CommandTest
 commands:
-    test:
+    cname:
         description: Test Command
