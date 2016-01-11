@@ -31,10 +31,18 @@ public class Commands implements CommandExecutor {
 			if(sender instanceof Player) {
 				if(length == 0) {
 					String p = args[0];
-					String rpname = config.getConfig().getString(p + ".RPName");
+					String rpname = config.getConfig().getString(p + ".rpname");
 //					Other stats need to be added later such as EXP, etc.
 				}
 			}
+		}
+		
+		if(cmd.getName().equalsIgnoreCase("cname")) {
+			
+			Player p = (Player)sender;
+			
+			p.setCustomName("Test");
+			
 		}
 		
 		return false;
