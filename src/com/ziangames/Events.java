@@ -30,6 +30,9 @@ public class Events implements Listener{
 			int newExp = oldExp + 1;
 			player.setExp(newExp);
 			config.getConfig().set(player + ".exp", newExp);
+			config.saveConfig();
+			
+//			Possible XP sound
 			
 //			new Experience();
 			
