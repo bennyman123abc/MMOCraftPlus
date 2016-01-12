@@ -41,7 +41,7 @@ public class Commands implements CommandExecutor {
 			
 			Player p = (Player)sender;
 			
-			p.setCustomName("Test");
+			p.setDisplayName("test");
 			
 		}
 		

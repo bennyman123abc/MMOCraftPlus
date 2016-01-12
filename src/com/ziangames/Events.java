@@ -27,8 +27,21 @@ public class Events implements Listener{
 			
 			int oldExp = config.getConfig().getInt(player + ".exp");
 			int oldPlayerLevel = config.getConfig().getInt(player + ".lvl");
+			int newExp = oldExp + 1;
+			player.setExp(newExp);
+			config.getConfig().set(player + ".exp", newExp);
 			
+//			new Experience();
 			
+//			if(oldPlayerLevel >= 0 && oldPlayerLevel <= 16) {
+//				int level = config.getConfig().getInt(player + ".lvl");
+//				int exp = config.getConfig().getInt(player + ".exp");
+//				int s1 = level * level;
+//				int s2 = 6 * level;
+//				int newExp = s1 + s2;
+//				
+//				player.setExp(newExp);
+//			}
 		}
 	}
 
