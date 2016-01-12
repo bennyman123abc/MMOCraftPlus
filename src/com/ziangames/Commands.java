@@ -41,7 +41,11 @@ public class Commands implements CommandExecutor {
 			
 			Player p = (Player)sender;
 			
+<<<<<<< HEAD
 			p.setDisplayName("test");
+=======
+			p.setDisplayName("Test");
+>>>>>>> origin/master
 			
 		}
 		
