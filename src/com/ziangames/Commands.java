@@ -15,8 +15,6 @@ public class Commands implements CommandExecutor {
 //	Init Config in this Class
 	PluginStart config;
 
-	@SuppressWarnings("unused")
-	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 //		Code each command in this override
 		
@@ -32,7 +30,15 @@ public class Commands implements CommandExecutor {
 				if(length == 0) {
 					String p = args[0];
 					String rpname = config.getConfig().getString(p + ".rpname");
-//					Other stats need to be added later such as EXP, etc.
+					if(rpname == "") {
+//						Other stats need to be added later such as EXP, etc.
+						sender.sendMessage("Current Roleplay Name: None");
+					}
+					
+					else if(!(rpname == "")) {
+						sender.sendMessage("Current Roleplay Name: " + rpname);
+					}
+
 				}
 			}
 		}
