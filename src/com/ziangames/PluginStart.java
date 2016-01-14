@@ -14,6 +14,7 @@ public class PluginStart extends JavaPlugin{
 		getServer().getLogger().info("Copyright 2016 ZianGames Inc.   All Rights Reserved");
 		Commander = new Commands(this);
 		new Events(this);
+		new Colors();
 		
 //		Register New Commands Under This Comment Like:
 //		getCommand("CommandHere").setExecutor(Commander);
@@ -23,8 +24,6 @@ public class PluginStart extends JavaPlugin{
 //		Update RPName and Exp count from Config
 		Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
 
-			@SuppressWarnings("unused")
-			@Override
 			public void run() {
 				for (Player player : Bukkit.getServer().getOnlinePlayers()) {
 					int Exp = getConfig().getInt(player + ".exp");
@@ -32,7 +31,11 @@ public class PluginStart extends JavaPlugin{
 					
 					player.setExp(Exp);
 					
-//					Titles and Custom Names to be added later
+					if(!(rpname == "")) {
+						player.setCustomName(rpname);
+					}
+					
+//					Titles to be added later
 				}
 				
 			}

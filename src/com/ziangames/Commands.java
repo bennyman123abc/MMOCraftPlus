@@ -4,6 +4,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import com.bennyman123abc.*;
 
 public class Commands implements CommandExecutor {
 
@@ -22,9 +23,9 @@ public class Commands implements CommandExecutor {
 //			sender.sendMessage("Test Successful!");
 //		}
 		
+		int length = args.length;
+		
 		if(cmd.getName().equalsIgnoreCase("stats")) {
-			
-			int length = args.length;
 			
 			if(sender instanceof Player) {
 				if(length == 0) {
@@ -55,7 +56,32 @@ public class Commands implements CommandExecutor {
 			
 		}
 		
+		if(cmd.getName().equalsIgnoreCase("mmocraftplus")) {
+			if(length == 0) {
+				sender.sendMessage("Well damn, that sucks. There's nothing here to display yet! And what also sucks is that the permission for this command isn't there!");
+			}
+			
+			if(length == 1) {
+				sender.sendMessage("Um.. The argument " + args[0] + " doesn't seem to be working yet. That's a bit embarassing...");
+			}
+			
+			if(length == 2) {
+				if(sender instanceof Player) {
+					if(args[0] == "setname") {
+						Player player = (Player)sender;
+						boolean canChangeName = config.getConfig().getBoolean(player + ".canChangeName");
+						if(canChangeName == true) {
+							config.getConfig().set(player + ".rpname", args[1]);
+							config.saveConfig();
+							player.sendMessage(Colors.red + "");
+						}
+					}
+				}
+			}
+		}
+		
 		return false;
 	}
+	
 
 }

@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="F:/Workspace/craftbukkit_server.jar"/>
 	<classpathentry kind="lib" path="E:/Workspace/craftbukkit_server.jar"/>
+	<classpathentry kind="lib" path="E:/Workspace/plugins/ChatColorLib.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
