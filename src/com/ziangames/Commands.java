@@ -4,7 +4,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import com.bennyman123abc.*;
+
+import com.bennyman123abc.Colors;
 
 public class Commands implements CommandExecutor {
 
@@ -73,7 +74,10 @@ public class Commands implements CommandExecutor {
 						if(canChangeName == true) {
 							config.getConfig().set(player + ".rpname", args[1]);
 							config.saveConfig();
-							player.sendMessage(Colors.red + "");
+							player.sendMessage(Colors.gold + "Your Roleplay name has been changed to " + args[1]);
+						}
+						if(canChangeName == false) {
+							player.sendMessage(Colors.darkRed + "You cannot change your name right now!");
 						}
 					}
 				}

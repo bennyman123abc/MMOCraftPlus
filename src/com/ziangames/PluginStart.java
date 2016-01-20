@@ -14,7 +14,6 @@ public class PluginStart extends JavaPlugin{
 		getServer().getLogger().info("Copyright 2016 ZianGames Inc.   All Rights Reserved");
 		Commander = new Commands(this);
 		new Events(this);
-		new Colors();
 		
 //		Register New Commands Under This Comment Like:
 //		getCommand("CommandHere").setExecutor(Commander);

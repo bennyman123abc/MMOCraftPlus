@@ -31,20 +31,6 @@ public class Events implements Listener{
 			player.setExp(newExp);
 			config.getConfig().set(player + ".exp", newExp);
 			config.saveConfig();
-			
-//			Possible XP sound
-			
-//			new Experience();
-			
-//			if(oldPlayerLevel >= 0 && oldPlayerLevel <= 16) {
-//				int level = config.getConfig().getInt(player + ".lvl");
-//				int exp = config.getConfig().getInt(player + ".exp");
-//				int s1 = level * level;
-//				int s2 = 6 * level;
-//				int newExp = s1 + s2;
-//				
-//				player.setExp(newExp);
-//			}
 		}
 	}
 
