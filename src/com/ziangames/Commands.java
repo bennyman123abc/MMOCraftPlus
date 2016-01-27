@@ -1,5 +1,7 @@
 package com.ziangames;
 
+import java.util.logging.Logger;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -10,8 +12,6 @@ import com.bennyman123abc.Colors;
 public class Commands implements CommandExecutor {
 
 	public Commands(PluginStart plugin) {
-//		This registers this class file with PluginStart
-//		DO NOT REMOVE ANY OF THIS AT ALL!!!!!
 	}
 	
 //	Init Config in this Class
@@ -47,23 +47,25 @@ public class Commands implements CommandExecutor {
 		
 		if(cmd.getName().equalsIgnoreCase("cname")) {
 			
-			Player p = (Player)sender;
+			sender.sendMessage(ErrorMessages.removed);
 			
-
-			p.setDisplayName("test");
-
-			p.setDisplayName("Test");
+//			Player p = (Player)sender;
+//			
+//
+//			p.setDisplayName("test");
+//
+//			p.setDisplayName("Test");
 
 			
 		}
 		
 		if(cmd.getName().equalsIgnoreCase("mmocraftplus")) {
 			if(length == 0) {
-				sender.sendMessage("Well damn, that sucks. There's nothing here to display yet! And what also sucks is that the permission for this command isn't there!");
+				sender.sendMessage(Colors.darkRed + ErrorMessages.todo);
 			}
 			
 			if(length == 1) {
-				sender.sendMessage("Um.. The argument " + args[0] + " doesn't seem to be working yet. That's a bit embarassing...");
+				sender.sendMessage(ErrorMessages.noArg);
 			}
 			
 			if(length == 2) {
@@ -75,9 +77,23 @@ public class Commands implements CommandExecutor {
 							config.getConfig().set(player + ".rpname", args[1]);
 							config.saveConfig();
 							player.sendMessage(Colors.gold + "Your Roleplay name has been changed to " + args[1]);
+							return true;
 						}
 						if(canChangeName == false) {
 							player.sendMessage(Colors.darkRed + "You cannot change your name right now!");
+							return true;
+						}
+					}
+					
+					else if(args[0] == "setexp") {
+						Player player = (Player)sender;
+						if(!player.hasPermission(PluginStart.admin)) {
+							player.sendMessage(Colors.darkRed + ErrorMessages.noPerm);
+							Logger.getLogger(player.getName() + " has tried to set their EXP without permission!");
+							return true;
+						}
+						else if(player.hasPermission(PluginStart.admin)) {
+							player.sendMessage(Colors.darkRed + ErrorMessages.todo);
 						}
 					}
 				}
