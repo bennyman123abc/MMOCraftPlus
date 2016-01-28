@@ -35,24 +35,6 @@ public class PluginStart extends JavaPlugin{
 //			getServer().getLogger().info("Config Not Generated. Generating Config Now");
 			
 			int lvl = 1;
-//			while(lvl <= 16) {
-//				double lvsqr = lvl * lvl;
-//				double lvsix = 6 * lvl;
-//				double lvfnl = lvsqr + lvsix;
-//				String cfglvl = String.valueOf(lvl);
-//				getConfig().set("levelValues" + cfglvl, lvfnl);
-//				lvl++;
-//			}
-//			
-//			while(lvl >= 17 && lvl <= 31) {
-//				double lvsqr = lvl * lvl;
-//				double lvtwfv = 2.5 * lvsqr;
-//				double lvfrty = 40.5 * lvl;
-//				double lvfnl = lvtwfv - lvfrty + 360;
-//				String cfglvl = String.valueOf(lvl);
-//				getConfig().set("levelValues" + cfglvl, lvfnl);
-//				lvl++;
-//			}
 			
 			while(lvl <= 16) {
 				double equ = (lvl * lvl) + (6 * lvl);
@@ -86,9 +68,12 @@ public class PluginStart extends JavaPlugin{
 			public void run() {
 				for (Player player : Bukkit.getServer().getOnlinePlayers()) {
 					int Exp = getConfig().getInt(player + ".exp");
+					player.setExp(Exp);
+					int lvl = player.getExpToLevel();
 					String rpname = getConfig().getString(player + ".rpname");
 					
-					player.setExp(Exp);
+					player.setLevel(lvl);
+					
 					
 					if(!(rpname == "")) {
 						player.setCustomName(rpname);
