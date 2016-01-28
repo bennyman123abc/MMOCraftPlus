@@ -78,7 +78,6 @@ public class PluginStart extends JavaPlugin{
 					if(!(rpname == "")) {
 						player.setCustomName(rpname);
 					}
-					
 //					Titles to be added later
 				}
 				

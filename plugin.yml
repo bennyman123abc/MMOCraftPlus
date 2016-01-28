@@ -1,6 +1,11 @@
 name: MMOCraftPlus
 main: com.ziangames.PluginStart
-version: CommandTest
+version: TESTING 0.2
 commands:
     cname:
         description: Test Command
+    mmocraftplus:
+        description: Main Command
+    stats:
+        description: Temporary MMO Stats Command
+    
