@@ -24,6 +24,7 @@ public class PluginStart extends JavaPlugin{
 		Commander = new Commands(this);
 		new Events(this);
 		new ErrorMessages();
+		new ConfigGen();
 		
 		boolean cfgGen = getConfig().getBoolean("generated");
 		
