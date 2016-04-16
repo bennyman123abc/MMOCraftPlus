@@ -12,7 +12,6 @@ public class PluginStart extends JavaPlugin{
 	
 	public static final Permission admin = new Permission("mmo.admin");
 	
-	@SuppressWarnings("unused")
 	@Override
 	public void onEnable() {
 		PluginManager pm = getServer().getPluginManager();
@@ -26,37 +25,37 @@ public class PluginStart extends JavaPlugin{
 		new ErrorMessages();
 		new ConfigGen();
 		
-		boolean cfgGen = getConfig().getBoolean("generated");
-		
-		if(cfgGen = true) {
-//			getServer().getLogger().info("Plugin Config Already Generated. Moving On");
-		}
-		
-		if(cfgGen = true) {
-//			getServer().getLogger().info("Config Not Generated. Generating Config Now");
-			
-			int lvl = 1;
-			
-			while(lvl <= 16) {
-				double equ = (lvl * lvl) + (6 * lvl);
-				String cfglvl = String.valueOf(lvl);
-				getConfig().set("levelValue" + cfglvl, equ);
-				lvl++;
-			}
-			
-			while(lvl >= 17 && lvl <= 31) {
-				double square = Math.pow(lvl, 2);
-				double equ = (2.5 * square) - (40.5 * lvl) + 360;
-				String cfglvl = String.valueOf(lvl);
-				getConfig().set("levelValue" + cfglvl, equ);
-				lvl++;
-			}
-			
-			getServer().getLogger().info("Config Generation Complete!");
-			getServer().getLogger().info("Config Will Now Be Loaded Into Memory");
-			getConfig().set("generated", true);
-			saveConfig();
-		}
+//		boolean cfgGen = getConfig().getBoolean("generated");
+//		
+//		if(cfgGen = true) {
+////			getServer().getLogger().info("Plugin Config Already Generated. Moving On");
+//		}
+//		
+//		if(cfgGen = true) {
+////			getServer().getLogger().info("Config Not Generated. Generating Config Now");
+//			
+//			int lvl = 1;
+//			
+//			while(lvl <= 16) {
+//				double equ = (lvl * lvl) + (6 * lvl);
+//				String cfglvl = String.valueOf(lvl);
+//				getConfig().set("levelValue" + cfglvl, equ);
+//				lvl++;
+//			}
+//			
+//			while(lvl >= 17 && lvl <= 31) {
+//				double square = Math.pow(lvl, 2);
+//				double equ = (2.5 * square) - (40.5 * lvl) + 360;
+//				String cfglvl = String.valueOf(lvl);
+//				getConfig().set("levelValue" + cfglvl, equ);
+//				lvl++;
+//			}
+//			
+//			getServer().getLogger().info("Config Generation Complete!");
+//			getServer().getLogger().info("Config Will Now Be Loaded Into Memory");
+//			getConfig().set("generated", true);
+//			saveConfig();
+//		}
 		
 //		Register New Commands Under This Comment Like:
 //		getCommand("CommandHere").setExecutor(Commander);
